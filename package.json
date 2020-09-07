@@ -1,0 +1,32 @@
+{
+  "name": "mmm-slamfm-playing-now",
+  "version": "1.0.0",
+  "description": "Shows what's playing now on slamfm!",
+  "main": "MMM-slamfm-playing-now.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngnijland/MMM-slamfm-playing-now.git"
+  },
+  "keywords": [
+    "slamfm!",
+    "radio",
+    "playing now",
+    "song",
+    "artist"
+  ],
+  "author": "Niek Nijland <ngnijland@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ngnijland/MMM-slamfm-playing-now/issues"
+  },
+  "homepage": "https://github.com/ngnijland/MMM-slamfm-playing-now#readme",
+  "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "prettier": "^2.1.1"
+  }
+}
