@@ -84,8 +84,56 @@ Module.register('MMM-slamfm-playing-now', {
       return text;
     }
 
-    text.textContent = `${this.nowPlaying.song.artist} - ${this.nowPlaying.song.title}`;
+    text.remove();
 
-    return text;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'bright';
+
+    const cover = document.createElement('img');
+    cover.src = this.nowPlaying.presenter.profileImage;
+
+    const dj = document.createElement('div');
+
+    const djIcon = document.createElement('i');
+    djIcon.className = 'fa fa-headphones icon';
+
+    const djText = document.createElement('span');
+    djText.textContent = this.nowPlaying.presenter.fullName;
+
+    dj.append(djIcon);
+    dj.append(djText);
+
+    const song = document.createElement('div');
+
+    const songIcon = document.createElement('i');
+    songIcon.className = 'fa fa-music icon';
+
+    const songText = document.createElement('span');
+    songText.textContent = this.nowPlaying.song.title;
+
+    song.append(songIcon);
+    song.append(songText);
+
+    const artist = document.createElement('div');
+
+    const artistIcon = document.createElement('i');
+    artistIcon.className = 'fa fa-user icon';
+
+    const artistText = document.createElement('span');
+    artistText.textContent = this.nowPlaying.song.artist;
+
+    artist.append(artistIcon);
+    artist.append(artistText);
+
+    wrapper.append(cover);
+    wrapper.append(dj);
+    wrapper.append(song);
+    wrapper.append(artist);
+
+    return wrapper;
+  },
+
+  getStyles: function () {
+    return [this.file('css/MMM-slamfm-playing-now.css')];
   },
 });
