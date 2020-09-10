@@ -90,6 +90,7 @@ Module.register('MMM-slamfm-playing-now', {
     wrapper.className = 'bright';
 
     const cover = document.createElement('img');
+    cover.className = 'cover';
     cover.src = this.nowPlaying.presenter.profileImage;
 
     const dj = document.createElement('div');

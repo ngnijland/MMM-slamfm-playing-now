@@ -1,3 +1,8 @@
+.MMM-slamfm-playing-now .cover {
+  margin-bottom: -75px;
+  margin-left: -75px;
+}
+
 .MMM-slamfm-playing-now .icon {
   margin-right: 8px;
 }
