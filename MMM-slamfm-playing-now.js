@@ -87,7 +87,7 @@ Module.register('MMM-slamfm-playing-now', {
     text.remove();
 
     const wrapper = document.createElement('div');
-    wrapper.className = 'bright';
+    wrapper.className = 'bright small';
 
     const cover = document.createElement('img');
     cover.className = 'cover';
