@@ -89,20 +89,28 @@ Module.register('MMM-slamfm-playing-now', {
     const wrapper = document.createElement('div');
     wrapper.className = 'bright small';
 
-    const cover = document.createElement('img');
-    cover.className = 'cover';
-    cover.src = this.nowPlaying.presenter.profileImage;
+    if (this.nowPlaying.presenter.profileImage) {
+      const cover = document.createElement('img');
+      cover.className = 'cover';
+      cover.src = this.nowPlaying.presenter.profileImage;
 
-    const dj = document.createElement('div');
+      wrapper.append(cover);
+    }
 
-    const djIcon = document.createElement('i');
-    djIcon.className = 'fa fa-headphones icon';
+    if (this.nowPlaying.presenter.fullName) {
+      const dj = document.createElement('div');
 
-    const djText = document.createElement('span');
-    djText.textContent = this.nowPlaying.presenter.fullName;
+      const djIcon = document.createElement('i');
+      djIcon.className = 'fa fa-headphones icon';
 
-    dj.append(djIcon);
-    dj.append(djText);
+      const djText = document.createElement('span');
+      djText.textContent = this.nowPlaying.presenter.fullName;
+
+      dj.append(djIcon);
+      dj.append(djText);
+
+      wrapper.append(dj);
+    }
 
     const song = document.createElement('div');
 
@@ -115,6 +123,8 @@ Module.register('MMM-slamfm-playing-now', {
     song.append(songIcon);
     song.append(songText);
 
+    wrapper.append(song);
+
     const artist = document.createElement('div');
 
     const artistIcon = document.createElement('i');
@@ -126,9 +136,6 @@ Module.register('MMM-slamfm-playing-now', {
     artist.append(artistIcon);
     artist.append(artistText);
 
-    wrapper.append(cover);
-    wrapper.append(dj);
-    wrapper.append(song);
     wrapper.append(artist);
 
     return wrapper;
