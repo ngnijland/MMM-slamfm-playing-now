@@ -89,13 +89,17 @@ Module.register('MMM-slamfm-playing-now', {
     const wrapper = document.createElement('div');
     wrapper.className = 'bright small';
 
+    const cover = document.createElement('img');
+
     if (this.nowPlaying.presenter.profileImage) {
-      const cover = document.createElement('img');
       cover.className = 'cover';
       cover.src = this.nowPlaying.presenter.profileImage;
-
-      wrapper.append(cover);
+    } else {
+      cover.className = 'logo';
+      cover.src = 'https://www.slam.nl/images/logos/slam_logo.png';
     }
+
+    wrapper.append(cover);
 
     if (this.nowPlaying.presenter.fullName) {
       const dj = document.createElement('div');
